@@ -53,11 +53,11 @@ namespace aicar {
         initSerial();
         switch ( mode )
         {
-            case 0:
+            case 1:
                 cmd = "ModeAI              ";
                 subCmd = "Start               ";
                 break;
-            case 1:
+            case 0:
                 cmd = "ModeManual          ";
                 subCmd = "Stop                ";
                 break;
