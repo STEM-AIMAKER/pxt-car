@@ -1,36 +1,36 @@
 
-//% weight=10 color=#1E90FF icon="\uf136" block="Stem AI Car"
+//% weight=10 color=#1E90FF icon="\uf136" block="HANSHIN STEM AI Car"
 namespace aicar {
     let serialInited = 0;
 
     export enum CarActions {
-        //% blockId="go forward" block="forward"
+        //% blockId="go forward" block="Forward"
         GoForward = 0,
-        //% blockId="go back" block="back"
+        //% blockId="go back" block="Back"
         GoBack = 1,
-        //% blockId="go left" block="left"
+        //% blockId="go left" block="Left"
         GoLeft = 2,
-        //% blockId="go right" block="right"
+        //% blockId="go right" block="Right"
         GoRight = 3,
-        //% blockId="stop car" block="stop"
+        //% blockId="stop car" block="Stop"
         GoStop = 4
     }
 
     export enum CarMode {
-        //% blockId="manual mode" block="manual"
+        //% blockId="manual mode" block="Manual"
         ManualModel=0,
-        //% blockId="ai mode" block="ai"
+        //% blockId="ai mode" block="AI"
         AIModel=1
     }
 
     export enum LaneColorFilter{
-        //% blockId="white" block="white"
+        //% blockId="white" block="White"
         White=0,
-        //% blockId="orange" block="orange"
+        //% blockId="orange" block="Orange"
         Orange=1,
-        //% blockId="blue" block="blue"
+        //% blockId="blue" block="Blue"
         Blue=2,
-        //% blockId="black" block="black"
+        //% blockId="black" block="Black"
         Black=3
     }
 
@@ -45,7 +45,7 @@ namespace aicar {
         }
     }
     //% weight=90
-    //% blockId=car_switchMode block="switch car mode to |%mode"
+    //% blockId=car_switchMode block="Switch car mode to |%mode"
     //% mode.fieldEditor="gridpicker" mode.fieldOptions.columns=2
     export function switchMode(mode : CarMode): void {
         let cmd = "";
@@ -63,19 +63,21 @@ namespace aicar {
                 break;
         }
 
-        if( cmd.length > 0 )
+        if( cmd.length > 0 ){
             serial.writeString(cmd);
+            basic.pause(100);
+        }
 
         if( subCmd.length > 0 ) {
-            basic.pause(300);
             serial.writeString(subCmd);
+            basic.pause(100);
         }
 
     }
 
     //% weight=90
-    //% blockId=car_Run block="run car|%action"
-    //% action.fieldEditor="gridpicker" action.fieldOptions.columns=5
+    //% blockId=car_Run block="Run car|%action"
+    //% action.fieldEditor="gridpicker" action.fieldOptions.columns=2
     export function carRun(action: CarActions): void {
         let cmd = "";
         initSerial();
@@ -97,12 +99,14 @@ namespace aicar {
                 break;
         }
 
-        if (cmd.length > 0)
+        if (cmd.length > 0) {
             serial.writeString(cmd);
+            basic.pause(50);
+        }
     }
 
     //% weight=90
-    //% blockId=car_changeLaneColor block="change lane color to |%color"
+    //% blockId=car_changeLaneColor block="Change lane color to |%color"
     //% color.fieldEditor="gridpicker" color.fieldOptions.columns=2
     export function changeLaneColor(color : LaneColorFilter): void{
             let cmd = "";
@@ -123,7 +127,9 @@ namespace aicar {
                     break;
             }
 
-            if( cmd.length > 0 )
+            if( cmd.length > 0 ) {
                 serial.writeString(cmd);
+                basic.pause(100);
+            }
     }
 } 
