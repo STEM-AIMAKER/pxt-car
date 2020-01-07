@@ -10,8 +10,7 @@
         "README.md",
         "main.ts",
         "_locales/zh-cn/car-strings.json",
-        "_locales/zh-tw/car-strings.json",
-        "_locales/car-strings.json"
+        "_locales/zh-tw/car-strings.json"
     ],
     "testFiles": [
         "test.ts"

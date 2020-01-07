@@ -4,33 +4,33 @@ namespace aicar {
     let serialInited = 0;
 
     export enum CarActions {
-        //% blockId="go forward" block="Forward"
+        //% blockId="Forward" block="Go Forward"
         GoForward = 0,
-        //% blockId="go back" block="Back"
+        //% blockId="Back" block="Go back"
         GoBack = 1,
-        //% blockId="go left" block="Left"
+        //% blockId="Left" block="Go Left"
         GoLeft = 2,
-        //% blockId="go right" block="Right"
+        //% blockId="Right" block="Go Right"
         GoRight = 3,
-        //% blockId="stop car" block="Stop"
+        //% blockId="Stop" block="Stop Car"
         GoStop = 4
     }
 
     export enum CarMode {
-        //% blockId="manual mode" block="Manual"
+        //% blockId="ManualMode" block="Manual"
         ManualModel=0,
-        //% blockId="ai mode" block="AI"
+        //% blockId="AIMode" block="AI"
         AIModel=1
     }
 
     export enum LaneColorFilter{
-        //% blockId="white" block="White"
+        //% blockId="White" block="White"
         White=0,
-        //% blockId="orange" block="Orange"
+        //% blockId="Orange" block="Orange"
         Orange=1,
-        //% blockId="blue" block="Blue"
+        //% blockId="Blue" block="Blue"
         Blue=2,
-        //% blockId="black" block="Black"
+        //% blockId="Black" block="Black"
         Black=3
     }
 
@@ -45,7 +45,7 @@ namespace aicar {
         }
     }
     //% weight=90
-    //% blockId=car_switchMode block="Switch car mode to |%mode"
+    //% blockId=switchMode block="Switch car mode to |%mode"
     //% mode.fieldEditor="gridpicker" mode.fieldOptions.columns=2
     export function switchMode(mode : CarMode): void {
         let cmd = "";
@@ -76,7 +76,7 @@ namespace aicar {
     }
 
     //% weight=90
-    //% blockId=car_Run block="Run car|%action"
+    //% blockId=carRun block="Run car|%action"
     //% action.fieldEditor="gridpicker" action.fieldOptions.columns=2
     export function carRun(action: CarActions): void {
         let cmd = "";
@@ -106,7 +106,7 @@ namespace aicar {
     }
 
     //% weight=90
-    //% blockId=car_changeLaneColor block="Change lane color to |%color"
+    //% blockId=changeLaneColor block="Change lane color to |%color"
     //% color.fieldEditor="gridpicker" color.fieldOptions.columns=2
     export function changeLaneColor(color : LaneColorFilter): void{
             let cmd = "";
