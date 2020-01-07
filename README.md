@@ -1,6 +1,45 @@
 # pxt-car
 
+## Usage
 
+###Predefined data type
+This is a enumeration indicating the actions of the car including forward,back,right,left and stop. 
+```block
+enum CarActions{forward,back,left,right,stop}
+```
+the CarMode represents two modes Manual and AI
+```block
+enum CarMode{Manual,AI}
+```
+and the LaneColorFilter provide four items for lane's color including white,blue,black and orange.
+```block
+enum LaneColorFilter{white,orange,blue,black}
+```
+
+### Initializing serial
+You can use the export function to set serial port pin and baud rate
+
+```block
+aicar.initSerial()
+```
+
+###Switching mode
+You can call the function switchMode() with the argument of CarMode to switch the mode between Manual and AI.
+```block
+aicar.switchMode(CarMode)
+```
+
+###Running car's actions
+You can call the function carRun() with the argument of CarActions to make the car run specific action.
+```block
+aicar.carRun(CarActions)
+```
+
+###Changing lane's color
+You can call the function changeLaneColor() with the argument of LaneColorFilter to change lane's color.
+```block
+aicar.changeLaneColor(LaneColorFilter)
+```
 
 ## TODO
 
