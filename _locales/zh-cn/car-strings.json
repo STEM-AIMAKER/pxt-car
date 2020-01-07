@@ -13,5 +13,5 @@
     "aicar.switchMode|block":"切换AI智能车模式到|%mode",
     "aicar.carRun|block":"智能车|%action",
     "aicar.changeLaneColor|block":"切换AI道路颜色到|%color",
-    "{id:category}HANSHIN STEM AI Car": "HANSHIN STEM智能车"
+    "{id:category}aicar": "HANSHIN STEM智能车"
 }
