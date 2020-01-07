@@ -3,7 +3,7 @@
 ## Usage
 
 ### Predefined data type
-This is a enumeration indicating the actions of the car including ``forward,back,right,left and stop``. 
+This is a enumeration indicating the actions of the car including ``forward``,``back``,``right``,``left`` and ``stop``. 
 ```block
 enum CarActions{forward,back,left,right,stop}
 ```
