@@ -41,17 +41,6 @@ You can call the function ``changeLaneColor()`` with the argument of ``LaneColor
 aicar.changeLaneColor(LaneColorFilter)
 ```
 
-## TODO
-
-- [ ] Add a reference for your blocks here
-- [ ] Add "- beta" to the GitHub project description if you are still iterating it.
-- [ ] Turn on your automated build on https://travis-ci.org
-- [ ] Use "pxt bump" to create a tagged release on GitHub
-- [ ] On GitHub, create a new file named LICENSE. Select the MIT License template.
-- [ ] Get your package reviewed and approved https://makecode.microbit.org/extensions/approval
-
-Read more at https://makecode.microbit.org/extensions
-
 ## Supported targets
 
 * for PXT/microbit
