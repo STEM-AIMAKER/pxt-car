@@ -17,7 +17,7 @@ enum LaneColorFilter{white,orange,blue,black}
 ```
 
 ### Initializing serial
-You can use the export function to set serial port pin and baud rate
+You can use the function to initialize the default output pin for serial port and baud rate
 
 ```block
 aicar.initSerial()
