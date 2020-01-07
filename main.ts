@@ -4,15 +4,15 @@ namespace aicar {
     let serialInited = 0;
 
     export enum CarActions {
-        //% blockId="Forward" block="Go Forward"
+        //% blockId="GoForward" block="Go Forward"
         GoForward = 0,
-        //% blockId="Back" block="Go back"
+        //% blockId="GoBack" block="Go back"
         GoBack = 1,
-        //% blockId="Left" block="Go Left"
+        //% blockId="GoLeft" block="Go Left"
         GoLeft = 2,
-        //% blockId="Right" block="Go Right"
+        //% blockId="GoRight" block="Go Right"
         GoRight = 3,
-        //% blockId="Stop" block="Stop Car"
+        //% blockId="GoStop" block="Stop Car"
         GoStop = 4
     }
 
