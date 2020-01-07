@@ -5,7 +5,7 @@
 ### Predefined data type
 This is a enumeration indicating the actions of the car including ``forward``,``back``,``right``,``left`` and ``stop``. 
 ```block
-enum CarActions{forward,back,left,right,stop}
+enum CarActions{Forward,Back,Left,Right,Stop}
 ```
 the ``CarMode`` represents two modes ``Manual`` and ``AI``.
 ```block
@@ -13,7 +13,7 @@ enum CarMode{Manual,AI}
 ```
 and the ``LaneColorFilter`` provides four items for lane's color including ``white``,``blue``,``black`` and ``orange``.
 ```block
-enum LaneColorFilter{white,orange,blue,black}
+enum LaneColorFilter{White,Orange,Blue,Black}
 ```
 
 ### Initializing serial
