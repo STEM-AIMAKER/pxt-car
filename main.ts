@@ -1,5 +1,5 @@
 
-//% weight=10 color=#1E90FF icon="\uf136" block="aicar"
+//% weight=10 color=#1E90FF icon="\uf136"
 namespace aicar {
     let serialInited = 0;
 
