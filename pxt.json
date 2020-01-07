@@ -9,12 +9,12 @@
     "files": [
         "README.md",
         "main.ts",
-        "_locales/zh-cn/car-strings.json",
-        "_locales/zh-tw/car-strings.json"
+        "_locales/zh-cn/aicar-strings.json",
+        "_locales/zh-tw/aicar-strings.json"
     ],
     "testFiles": [
         "test.ts"
     ],
-    "public": false,
+    "public": true,
     "preferredEditor": "tsprj"
 }
