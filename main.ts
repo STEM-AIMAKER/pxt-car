@@ -1,5 +1,5 @@
 
-//% weight=10 color=#1E90FF icon="\uf136" block="HANSHIN STEM AI Car"
+//% weight=10 color=#1E90FF icon="\uf136" block="aicar"
 namespace aicar {
     let serialInited = 0;
 
