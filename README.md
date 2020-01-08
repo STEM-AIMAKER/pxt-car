@@ -41,6 +41,9 @@ You can call the function ``changeLaneColor()`` with the argument of ``LaneColor
 aicar.changeLaneColor(LaneColorFilter)
 ```
 
+## License
+MIT
+
 ## Supported targets
 
 * for PXT/microbit
