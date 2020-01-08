@@ -1,6 +1,6 @@
 
 //% weight=10 color=#1E90FF icon="\uf136"
-namespace aicar {
+namespace COBot {
     let serialInited = 0;
 
     export enum CarActions {
