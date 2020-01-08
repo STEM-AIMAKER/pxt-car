@@ -1,7 +1,7 @@
 {
     "name": "COBot",
     "version": "1.0.0",
-    "description": "hanshin stem ai car",
+    "description": "hanshin stem COBot",
     "license": "MIT",
     "dependencies": {
         "core": "*"
@@ -9,8 +9,8 @@
     "files": [
         "README.md",
         "main.ts",
-        "_locales/zh-cn/aicar-strings.json",
-        "_locales/zh-tw/aicar-strings.json"
+        "_locales/zh-cn/COBot-strings.json",
+        "_locales/zh-tw/COBot-strings.json"
     ],
     "testFiles": [
         "test.ts"
