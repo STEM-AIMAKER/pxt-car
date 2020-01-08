@@ -13,5 +13,5 @@
     "COBot.switchMode|block":"切换AI智能车模式到|%mode",
     "COBot.carRun|block":"智能车|%action",
     "COBot.changeLaneColor|block":"切换AI道路颜色到|%color",
-    "{id:category}COBot": "HANSHIN STEM智能车"
+    "{id:category}COBot": "HANSHIN STEM COBot"
 }
