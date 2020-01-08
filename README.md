@@ -41,6 +41,9 @@ You can call the function ``changeLaneColor()`` with the argument of ``LaneColor
 aicar.changeLaneColor(LaneColorFilter)
 ```
 
+## Link
+If some errors occurred, you will need to search for it using the full Github repo URL. eg: https://github.com/stem-hanshin/pxt-car/
+
 ## License
 MIT
 
