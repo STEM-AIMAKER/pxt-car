@@ -94,7 +94,7 @@ namespace COBot {
         pins.analogWritePin(AnalogPin.P1, sp)
     }
 
-    //% blockId=switchMode block="Switch car mode to |%mode"
+    //% blockId=runMotor block="run Motor |%motor at speed %speed %direction"
     //% motor.fieldEditor="gridpicker" motor.fieldOptions.columns=1
     //% speed.min=0 speed.max=100
     //% direction.fieldEditor="gridpicker" direction.fieldOptions.columns=1
@@ -146,33 +146,42 @@ namespace COBot {
     }
 
     //% weight=90
-    //% blockId=carRun block="Run car|%action"
+    //% blockId=carRun block="Run car|%action in full speed"
     //% action.fieldEditor="gridpicker" action.fieldOptions.columns=2
     export function carRun(action: CarActions): void {
-        let cmd = "";
-        initSerial();
+        //let cmd = "";
+        //initSerial();
         switch (action) {
             case 0:
-                cmd = "Forward             ";
+                //cmd = "Forward             ";
+                executeLeftMotor(100, Directions.Positive);
+                executeRightMotor(100, Directions.Positive);
                 break;
             case 1:
-                cmd = "Back                ";
+                //cmd = "Back                ";
+                executeLeftMotor(100, Directions.Negative);
+                executeRightMotor(100, Directions.Negative);
                 break;
             case 2:
-                cmd = "Left                ";
+                //cmd = "Left                ";
+                executeLeftMotor(0, Directions.Negative);
+                executeRightMotor(100, Directions.Positive);
                 break;
             case 3:
-                cmd = "Right               ";
+                //cmd = "Right               ";
+                executeLeftMotor(100, Directions.Positive);
+                executeRightMotor(0, Directions.Negative);
                 break;
             case 4:
-                cmd = "Stop                ";
+                //cmd = "Stop                ";
+                executeLeftMotor(0, Directions.Positive);
+                executeRightMotor(0, Directions.Negative);
                 break;
         }
-
-        if (cmd.length > 0) {
-            serial.writeString(cmd);
-            basic.pause(50);
-        }
+        // if (cmd.length > 0) {
+        //     serial.writeString(cmd);
+        //     basic.pause(50);
+        // }
     }
 
     //% weight=90
