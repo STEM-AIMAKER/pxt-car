@@ -74,9 +74,9 @@ namespace COBot {
 
     function executeLeftMotor( speed: number, direct: Directions ): void {
         if( direct == Directions.Positive )
-            pins.digitalWritePin(DigitalPin.P14, 0)
-        else
             pins.digitalWritePin(DigitalPin.P14, 1)
+        else
+            pins.digitalWritePin(DigitalPin.P14, 0)
         
         let sp = 0;
         sp = speed * 1023 / 100;
@@ -85,9 +85,9 @@ namespace COBot {
 
     function executeRightMotor( speed: number, direct: Directions ): void {
         if (direct == Directions.Positive)
-            pins.digitalWritePin(DigitalPin.P15, 0)
-        else
             pins.digitalWritePin(DigitalPin.P15, 1)
+        else
+            pins.digitalWritePin(DigitalPin.P15, 0)
 
         let sp = 0;
         sp = speed * 1023 / 100;
@@ -151,6 +151,7 @@ namespace COBot {
     export function carRun(action: CarActions): void {
         //let cmd = "";
         //initSerial();
+        initPins();
         switch (action) {
             case 0:
                 //cmd = "Forward             ";
