@@ -124,13 +124,13 @@ namespace COBot {
         initSerial();
         switch ( mode )
         {
-            case 1:
+            case CarMode.AIModel:
                 cmd = "ModeAI              ";
                 subCmd = "Start               ";
                 break;
-            case 0:
+            case CarMode.ManualModel:
                 cmd = "ModeManual          ";
-                subCmd = "Stop                ";
+                carRun(CarActions.GoStop);
                 break;
         }
 
@@ -146,34 +146,34 @@ namespace COBot {
     }
 
     //% weight=90
-    //% blockId=carRun block="Run car|%action in full speed"
+    //% blockId=carRun block="Run car|%action at full speed"
     //% action.fieldEditor="gridpicker" action.fieldOptions.columns=2
     export function carRun(action: CarActions): void {
         //let cmd = "";
         //initSerial();
         initPins();
         switch (action) {
-            case 0:
+            case CarActions.GoForward:
                 //cmd = "Forward             ";
                 executeLeftMotor(100, Directions.Positive);
                 executeRightMotor(100, Directions.Positive);
                 break;
-            case 1:
+            case CarActions.GoBack:
                 //cmd = "Back                ";
                 executeLeftMotor(100, Directions.Negative);
                 executeRightMotor(100, Directions.Negative);
                 break;
-            case 2:
+            case CarActions.GoLeft:
                 //cmd = "Left                ";
                 executeLeftMotor(0, Directions.Negative);
                 executeRightMotor(100, Directions.Positive);
                 break;
-            case 3:
+            case CarActions.GoRight:
                 //cmd = "Right               ";
                 executeLeftMotor(100, Directions.Positive);
                 executeRightMotor(0, Directions.Negative);
                 break;
-            case 4:
+            case CarActions.GoStop:
                 //cmd = "Stop                ";
                 executeLeftMotor(0, Directions.Positive);
                 executeRightMotor(0, Directions.Negative);
