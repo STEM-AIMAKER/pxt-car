@@ -79,6 +79,8 @@ namespace COBot {
             pins.digitalWritePin(DigitalPin.P14, 0)
         
         let sp = 0;
+        if (speed > 80)
+            speed = 80;
         sp = speed * 1023 / 100;
         pins.analogWritePin(AnalogPin.P0, sp)
     }
@@ -89,9 +91,31 @@ namespace COBot {
         else
             pins.digitalWritePin(DigitalPin.P15, 0)
 
+        if( speed > 80 )
+            speed = 80;
+
         let sp = 0;
         sp = speed * 1023 / 100;
         pins.analogWritePin(AnalogPin.P1, sp)
+    }
+
+    //% blockId=aiRunMotor block="AI run motor"
+    export function aiRunMotor(cmd: string) : void {
+        initSerial();
+        let head = cmd.charAt(0);
+        let direction = cmd.charAt(2);
+        let speedStr = cmd.charAt(4) + cmd.charAt(5);
+        
+        let motor = Motors.LeftMotor;
+        if( head == "r" )
+            motor = Motors.RightMotor;
+
+        let direct = Directions.Positive;
+        if( direction == "1" )
+            direct = Directions.Negative;
+        let speed = parseInt(speedStr);
+        
+        runMotor(motor, speed, direct );
     }
 
     //% blockId=runMotor block="run Motor |%motor at speed %speed %direction"
