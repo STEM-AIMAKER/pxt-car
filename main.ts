@@ -128,6 +128,9 @@ namespace COBot {
             direct = Directions.Negative;
         let speed = parseInt(speedStr);
         
+        let ser = head + direction + speedStr +"aaaaaafffffbbbbb";
+        serial.writeString(ser);
+        
         runMotor(motor, speed, direct );
     }
 
