@@ -103,35 +103,40 @@ namespace COBot {
     export function isAICmd(cmd: string): boolean {
         let ret = false;
         let head = cmd.charAt(0);
-        let cm = cmd.charAt(1);
-        if( cm == "+" )
-        {
-            if( head == "r" || head == "l" )
-                ret = true;
-        }
+        if( head == "m" )
+            ret = true;
+
         return ret;
     }
 
     //% blockId=aiRunMotor block="AI run motor %cmd"
     export function aiRunMotor(cmd: string) : void {
         initSerial();
-        let head = cmd.charAt(0);
-        let direction = cmd.charAt(2);
-        let speedStr = cmd.charAt(4) + cmd.charAt(5);
-        
-        let motor = Motors.LeftMotor;
-        if( head == "r" )
-            motor = Motors.RightMotor;
+        if( isAICmd(cmd) )
+        {
+            let rd = cmd.charAt(1);
+            let rsStr = cmd.charAt(2) + cmd.charAt(3);
 
-        let direct = Directions.Positive;
-        if( direction == "1" )
-            direct = Directions.Negative;
-        let speed = parseInt(speedStr);
-        
-        let ser = head + direction + speedStr +"aaaaaafffffbbbbb";
-        serial.writeString(ser);
-        
-        runMotor(motor, speed, direct );
+            let ld = cmd.charAt(4);
+            let lsStr = cmd.charAt(5) + cmd.charAt(6);
+            
+            let rdd = Directions.Positive;
+            if( rd == "1" )
+                rdd = Directions.Negative;
+            
+            let ldd = Directions.Positive;
+            if (ld == "1")
+                ldd = Directions.Negative;
+            
+            let rss = parseInt(rsStr);
+            let lss = parseInt(lsStr);
+
+            serial.writeString(cmd);
+            
+            runMotor(Motors.LeftMotor, lss, ldd);
+            runMotor(Motors.RightMotor, rss, rdd);
+                       
+        }
     }
 
     //% blockId=runMotor block="run Motor |%motor at speed %speed %direction"
