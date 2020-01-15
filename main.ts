@@ -99,6 +99,19 @@ namespace COBot {
         pins.analogWritePin(AnalogPin.P1, sp)
     }
 
+    //% blockId=isAICmd block="is %cmd AI command"
+    export function isAICmd(cmd: string): boolean {
+        let ret = false;
+        let head = cmd.charAt(0);
+        let cm = cmd.charAt(1);
+        if( cm == "+" )
+        {
+            if( head == "r" || head == "l" )
+                ret = true;
+        }
+        return ret;
+    }
+
     //% blockId=aiRunMotor block="AI run motor"
     export function aiRunMotor(cmd: string) : void {
         initSerial();
