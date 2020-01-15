@@ -112,7 +112,7 @@ namespace COBot {
         return ret;
     }
 
-    //% blockId=aiRunMotor block="AI run motor"
+    //% blockId=aiRunMotor block="AI run motor %cmd"
     export function aiRunMotor(cmd: string) : void {
         initSerial();
         let head = cmd.charAt(0);
