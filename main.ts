@@ -189,9 +189,17 @@ namespace COBot {
         {
             case CarMode.AIModel:
                 cmd = "MA";
+                pins.setPull(DigitalPin.P0, PinPullMode.PullUp)
+                pins.setPull(DigitalPin.P1, PinPullMode.PullUp)
+                pins.setPull(DigitalPin.P14, PinPullMode.PullUp)
+                pins.setPull(DigitalPin.P15, PinPullMode.PullUp)
                 break;
             case CarMode.ManualModel:
                 cmd = "MM";
+                pins.setPull(DigitalPin.P0, PinPullMode.PullDown)
+                pins.setPull(DigitalPin.P1, PinPullMode.PullDown)
+                pins.setPull(DigitalPin.P14, PinPullMode.PullDown)
+                pins.setPull(DigitalPin.P15, PinPullMode.PullDown)
                 carRun(CarActions.GoStop);
                 break;
         }
