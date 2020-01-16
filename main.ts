@@ -99,45 +99,45 @@ namespace COBot {
         pins.analogWritePin(AnalogPin.P1, sp)
     }
 
-    //% blockId=isAICmd block="is %cmd AI command"
-    export function isAICmd(cmd: string): boolean {
-        let ret = false;
-        let head = cmd.charAt(0);
-        if( head == "m" )
-            ret = true;
+    // //% blockId=isAICmd block="is %cmd AI command"
+    // export function isAICmd(cmd: string): boolean {
+    //     let ret = false;
+    //     let head = cmd.charAt(0);
+    //     if( head == "m" )
+    //         ret = true;
 
-        return ret;
-    }
+    //     return ret;
+    // }
 
-    //% blockId=aiRunMotor block="AI run motor %cmd"
-    export function aiRunMotor(cmd: string) : void {
-        initSerial();
-        if( isAICmd(cmd) )
-        {
-            let rd = cmd.charAt(1);
-            let rsStr = cmd.charAt(2) + cmd.charAt(3);
+    // //% blockId=aiRunMotor block="AI run motor %cmd"
+    // export function aiRunMotor(cmd: string) : void {
+    //     initSerial();
+    //     if( isAICmd(cmd) )
+    //     {
+    //         let rd = cmd.charAt(1);
+    //         let rsStr = cmd.charAt(2) + cmd.charAt(3);
 
-            let ld = cmd.charAt(4);
-            let lsStr = cmd.charAt(5) + cmd.charAt(6);
+    //         let ld = cmd.charAt(4);
+    //         let lsStr = cmd.charAt(5) + cmd.charAt(6);
             
-            let rdd = Directions.Positive;
-            if( rd == "1" )
-                rdd = Directions.Negative;
+    //         let rdd = Directions.Positive;
+    //         if( rd == "1" )
+    //             rdd = Directions.Negative;
             
-            let ldd = Directions.Positive;
-            if (ld == "1")
-                ldd = Directions.Negative;
+    //         let ldd = Directions.Positive;
+    //         if (ld == "1")
+    //             ldd = Directions.Negative;
             
-            let rss = parseInt(rsStr);
-            let lss = parseInt(lsStr);
+    //         let rss = parseInt(rsStr);
+    //         let lss = parseInt(lsStr);
 
-            serial.writeString(cmd);
+    //         serial.writeString(cmd);
             
-            runMotor(Motors.LeftMotor, lss, ldd);
-            runMotor(Motors.RightMotor, rss, rdd);
+    //         runMotor(Motors.LeftMotor, lss, ldd);
+    //         runMotor(Motors.RightMotor, rss, rdd);
                        
-        }
-    }
+    //     }
+    // }
 
     //% blockId=runMotor block="run Motor |%motor at speed %speed %direction"
     //% motor.fieldEditor="gridpicker" motor.fieldOptions.columns=1
@@ -159,6 +159,24 @@ namespace COBot {
                 break;
         }
     }
+    
+    //% blockId=startAI block="In AI mode, Start car to run"
+    export function startAI():void {
+        // ST
+        let cmd = "ST";
+        initSerial();
+        serial.writeString(cmd);        
+        basic.pause(100);
+    }
+
+    //% blockId=stopCar block="Stop car"
+    export function stopCar() : void {
+        // SO
+        let cmd = "SO";
+        initSerial();
+        serial.writeString(cmd);
+        basic.pause(100);
+    }
 
     //% weight=90
     //% blockId=switchMode block="Switch car mode to |%mode"
@@ -170,11 +188,10 @@ namespace COBot {
         switch ( mode )
         {
             case CarMode.AIModel:
-                cmd = "ModeAI              ";
-                subCmd = "Start               ";
+                cmd = "MA";
                 break;
             case CarMode.ManualModel:
-                cmd = "ModeManual          ";
+                cmd = "MM";
                 carRun(CarActions.GoStop);
                 break;
         }
@@ -239,16 +256,16 @@ namespace COBot {
             switch( color )
             {
                 case 0:
-                    cmd = "White               ";
+                    cmd = "WH"; // white
                     break;
                 case 1:
-                    cmd = "Orange              ";
+                    cmd = "OR"; // orange
                     break;
                 case 2:
-                    cmd = "Blue                ";
+                    cmd = "BU"; // blue
                     break;
                 case 3:
-                    cmd = "Black               ";
+                    cmd = "BL"; // black
                     break;
             }
 
