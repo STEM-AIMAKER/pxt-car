@@ -57,7 +57,7 @@ namespace COBot {
             serial.redirect(
                 SerialPin.P8,
                 SerialPin.P16,
-                BaudRate.BaudRate9600
+                BaudRate.BaudRate115200
             );
             serialInited = 1;
         }
